@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-sans: "Manrope", "Inter", system-ui, sans-serif;
+
+  --color-ivory: #faf7f2;
+  --color-nude-50: #fbf6ee;
+  --color-nude-100: #f4ebdd;
+  --color-nude-200: #ead9be;
+  --color-nude-300: #ddc39c;
+  --color-champagne: #d9c6a5;
+  --color-gold: #b8985f;
+  --color-gold-dark: #8f7645;
+  --color-graphite: #322b26;
+  --color-graphite-soft: #4a423b;
+  --color-brown-soft: #6b5c4d;
+
+  --animate-fade-up: fade-up 0.8s ease-out both;
+  --animate-fade-in: fade-in 1s ease-out both;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-ivory);
+  color: var(--color-graphite);
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--color-champagne);
+  color: var(--color-graphite);
+}
+
+.font-serif-display {
+  font-family: var(--font-serif);
+}
+
+/* Fade-in-on-scroll utility */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+img {
+  color: transparent;
+}
